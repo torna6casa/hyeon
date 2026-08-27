@@ -58,6 +58,44 @@
         </a>
 
     </nav>
+    
+<script>
+let autoScrolling = true;
+let resumeTimer;
+
+function autoScroll() {
+    if (autoScrolling) {
+        window.scrollBy(0, 0.3);
+    }
+
+    requestAnimationFrame(autoScroll);
+}
+
+window.addEventListener("touchstart", function () {
+    autoScrolling = false;
+    clearTimeout(resumeTimer);
+});
+
+window.addEventListener("touchend", function () {
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+window.addEventListener("wheel", function () {
+    autoScrolling = false;
+
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+autoScroll();
+</script>
 
 </body>
 </html>
