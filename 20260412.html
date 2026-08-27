@@ -36,7 +36,7 @@
 혹시 이 무기력함을 건져내서 우울증이라고 명명할 수 있는 걸까? <br>
 난 내 우울증 진단에 의구심을 품고 있던 참이기에... 어떤 깨달음이든 아무렴 좋다. 
 ​​</p> <p>
-제대로 된 길을 걷고 싶구나...
+제대로 된 길을 걷고 싶구나... <br> </p>
 
       </main>
 
@@ -56,6 +56,43 @@
         </a>
 
     </nav>
+<script>
+let autoScrolling = true;
+let resumeTimer;
+
+function autoScroll() {
+    if (autoScrolling) {
+        window.scrollBy(0, 0.3);
+    }
+
+    requestAnimationFrame(autoScroll);
+}
+
+window.addEventListener("touchstart", function () {
+    autoScrolling = false;
+    clearTimeout(resumeTimer);
+});
+
+window.addEventListener("touchend", function () {
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+window.addEventListener("wheel", function () {
+    autoScrolling = false;
+
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+autoScroll();
+</script>
 
     </body>
     </html>
