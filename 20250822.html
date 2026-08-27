@@ -49,7 +49,7 @@
 무기력함에도 주체적인 태도로 시인해야 한다 <br>
 우울하대도 약도 버렸고 투신할 힘도 없다 <br>
 강제적으로 건강할 따름이다 <br>
-다 삿된 일이다
+다 삿된 일이다 <br>
         </p>
 
     </main>
@@ -70,6 +70,44 @@
         </a>
 
     </nav>
+    
+    <script>
+let autoScrolling = true;
+let resumeTimer;
+
+function autoScroll() {
+    if (autoScrolling) {
+        window.scrollBy(0, 0.3);
+    }
+
+    requestAnimationFrame(autoScroll);
+}
+
+window.addEventListener("touchstart", function () {
+    autoScrolling = false;
+    clearTimeout(resumeTimer);
+});
+
+window.addEventListener("touchend", function () {
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+window.addEventListener("wheel", function () {
+    autoScrolling = false;
+
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+autoScroll();
+</script>
 
 </body>
 </html>
