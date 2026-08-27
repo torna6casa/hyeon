@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HyeoniLand</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="credit-roll">
+
+    <section class="intro">
+
+        <h1>Sawdust</h1>
+
+        <h2>회고, 아카이브, 공유</h2>
+
+        <div class="description">
+
+        <p>
+        그들은 떠났다<br>
+        무너져내린 판잣집들, 흩어진 유리 조각,<br>
+        검은 재를 밟으며 돌아오는 나에게<br>
+        참새 한 마리<br>
+        그들이 떠났다는 전언을 전하려는 듯<br>
+        전선 위에 남아 있다가 이내 날아간다<br>
+        저 새<br>
+        제 날개의 가벼움으로 날아가듯이<br>
+        나 이제 어떤 가벼움으로 살아야 하나<br>
+        고향처럼 지나던 그 골목 잃어버리고<br>
+        참 너머 백열등 불빛에 젖어 보던 저녁도 잃어버리고<br>
+        재와 흙이 섞여가는 길 위에서<br>
+        어떤 황혼에 물들며 서 있어야 하나<br>
+        새 아파트에 살면서 그들의<br>
+        때 묻은 벽지를 정겹다 말했던 나는<br>
+        침대에 몸을 눕히고 살면서 그들의<br>
+        낮은 잠자리 기웃거리던 나는<br>
+        잃어버렸다, 그들을, 또한<br>
+        누군가의 가난을 필요로 했던 반성과<br>
+        누군가의 비참을 필요로 했던 그리움을<br>
+        아, 처음부터 내 것이 아니었던 애틋함을<br>
+        그들은 떠났다<br>
+        닭의 울음소리를 데불고,<br>
+        푸른 이불과도 같이 누추한 지붕을 가려주던<br>
+        호박 덩굴마저 거두어내리고 총총히 사라졌다<br>
+        내 마음의 덩굴손이여<br>
+        너는 또 어떤 누추함에 뿌리를 내리려느냐<br>
+        누구의 가난을 또 푸르게 덮으려느냐<br>
+        허공에서 머뭇거리고 있는 굴광성의 영혼이여<br>
+        </p>
+
+    </div>
+
+
+    <div class="info">
+
+        <i>001</i> 2008.02.26. – 2021.03.02. <br>
+        <i>002</i> 2021.03.03. – 2025.04. <br>
+        <i>003</i> 2025.04. – 2025.10.13. <br>
+        <i>004</i> 2025.10.14. – 2026.01.31. <br>
+        <i>005</i> 2026.02.01. –
+
+    </div>
+
+    </section>
+
+        <!-- 오른쪽 이미지 -->
+        <section class="image-area">
+
+            <img src="images/IMG_0328.jpeg" alt="image">
+
+        </section>
+
+
+    
+
+</main>
+
+
+        
+
+
+
+    <!-- 화면 아래에 고정되는 메뉴 -->
+<nav class="bottom-menu">
+
+    <a href="hyeon.html" class="active">
+        Hyeon
+    </a>
+
+    <a href="blog.html">
+        Blog
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+</nav>
+
+<script>
+let autoScrolling = true;
+let resumeTimer;
+
+function autoScroll() {
+    if (autoScrolling) {
+        window.scrollBy(0, 0.3);
+    }
+
+    requestAnimationFrame(autoScroll);
+}
+
+window.addEventListener("touchstart", function () {
+    autoScrolling = false;
+    clearTimeout(resumeTimer);
+});
+
+window.addEventListener("touchend", function () {
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+window.addEventListener("wheel", function () {
+    autoScrolling = false;
+
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+autoScroll();
+</script>
+
+</body>
+</html>
