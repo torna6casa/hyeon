@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    color: black;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+
+/* --------------------
+   첫 화면
+-------------------- */
+
+.credit-roll {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    min-height: 100vh;
+    padding: 35px 10% 80px 10%;
+}
+
+
+/* 왼쪽 */
+
+.intro {
+    padding-right: 50px;
+}
+
+h1 {
+    margin: 0 0 18px 0;
+
+    font-size: 38px;
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+h2 {
+    margin: 0;
+
+    font-size: 18px;
+    font-style: italic;
+}
+
+a,
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/* 본문 */
+
+.description {
+    margin-top: 45px;
+
+    max-width: 540px;
+}
+
+.description p {
+    margin: 0 0 34px 0;
+}
+
+.description .english {
+    margin-bottom: 25px;
+}
+
+
+/* 연대기 */
+
+.info {
+    margin-top: 65px;
+
+    font-size: 16px;
+}
+
+
+/* --------------------
+   오른쪽 이미지
+-------------------- */
+
+.image-area {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 75px;
+}
+
+.image-area img {
+    display: block;
+
+    width: 82%;
+    max-width: 530px;
+    height: auto;
+}
+
+
+/* --------------------
+   하단 메뉴
+-------------------- */
+
+.bottom-menu {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 8px 18px;
+
+    background: white;
+
+    display: flex;
+    gap: 20px;
+
+    font-size: 16px;
+
+    z-index: 100;
+}
+
+.bottom-menu a,
+.bottom-menu a:visited {
+    white-space: nowrap;
+    color: black;
+}
+
+/* --------------------
+   Works 페이지
+-------------------- */
+
+.credit-roll2 {
+    padding: 25px 18px 70px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.credit-roll2 a {
+    font-size: 38px;
+    line-height: 1.18;
+
+    font-weight: 400;
+}
+
+
+/* 현재 페이지 메뉴 */
+
+.bottom-menu a.active {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* --------------------
+   모바일
+-------------------- */
+
+@media screen and (max-width: 700px) {
+    .credit-roll {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        padding: 25px 18px 70px 18px;
+    }
+
+    .intro {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .image-area {
+        width: 100%;
+        padding-top: 50px;
+    }
+
+    .image-area img {
+        width: 100%;
+        max-width: 530px;
+    }
+}
