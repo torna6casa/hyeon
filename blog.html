@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="credit-roll2">
+        <a href="20260621.html">2026-06-21</a>
+        <a href="20260618.html">2025-06-18</a>
+        <a href="20260521.html">2026-05-21</a>
+        <a href="20260423.html">2026-04-23</a>
+        <a href="20260412.html">2026-04-12</a>
+        <a href="20250822.html">2025-08-22</a>
+        <a href="20250805.html">2025-08-05</a>
+
+
+    </main>
+
+
+<nav class="bottom-menu">
+
+    <a href="index.html">
+        Hyeon
+    </a>
+
+    <a href="blog.html" class="active">
+        Blog
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+</nav>
+
+<script>
+let autoScrolling = true;
+let resumeTimer;
+
+function autoScroll() {
+    if (autoScrolling) {
+        window.scrollBy(0, 0.3);
+    }
+
+    requestAnimationFrame(autoScroll);
+}
+
+window.addEventListener("touchstart", function () {
+    autoScrolling = false;
+    clearTimeout(resumeTimer);
+});
+
+window.addEventListener("touchend", function () {
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+window.addEventListener("wheel", function () {
+    autoScrolling = false;
+
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+autoScroll();
+</script>
+
+
+</body>
+</html>
