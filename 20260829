@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>2025-08-05</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="diary">
+
+        <h1>2025-08-05</h1>
+
+        <p>
+나를 울게 만드는 힘을 그리워한다 <br>
+열망을 잃어버린 것 같다 <br>
+그리움도 공포도 사랑도 기쁨도 혐오도 화도 좋으니 <br>
+삶을 살려내고 싶다 <br>
+        </p>
+
+    </main>
+
+
+    <nav class="bottom-menu">
+
+        <a href="index.html">
+            Hyeon
+        </a>
+
+        <a href="blog.html" class="active">
+            Blog
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+    
+    <script>
+let autoScrolling = true;
+let resumeTimer;
+
+function autoScroll() {
+    if (autoScrolling) {
+        window.scrollBy(0, 0.3);
+    }
+
+    requestAnimationFrame(autoScroll);
+}
+
+window.addEventListener("touchstart", function () {
+    autoScrolling = false;
+    clearTimeout(resumeTimer);
+});
+
+window.addEventListener("touchend", function () {
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+window.addEventListener("wheel", function () {
+    autoScrolling = false;
+
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+autoScroll();
+</script>
+
+</body>
+</html>
