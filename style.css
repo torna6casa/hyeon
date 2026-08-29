@@ -109,6 +109,12 @@ a:visited {
     height: auto;
 }
 
+.diary img {
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+}
 
 /* --------------------
    하단 메뉴
