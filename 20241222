@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>2024-12-22</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="diary">
+<h1>2024-12-22> </h1>
+<p>
+장강의 달은 이리도 밝고<br>
+사천의 하늘은<br>
+천하의 모든 별을 모은 듯<br>
+</p> <p>
+밤이 깊을수록 <br>
+달과 별은 <br>
+</p> <p>
+어둠 속으로 사라지고 </p>
+
+이태백. 
+
+
+ </main>
+
+
+    <nav class="bottom-menu">
+
+        <a href="index.html">
+            Hyeon
+        </a>
+
+        <a href="blog.html" class="active">
+            Blog
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+    
+    <script>
+let autoScrolling = true;
+let resumeTimer;
+
+function autoScroll() {
+    if (autoScrolling) {
+        window.scrollBy(0, 0.3);
+    }
+
+    requestAnimationFrame(autoScroll);
+}
+
+window.addEventListener("touchstart", function () {
+    autoScrolling = false;
+    clearTimeout(resumeTimer);
+});
+
+window.addEventListener("touchend", function () {
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+window.addEventListener("wheel", function () {
+    autoScrolling = false;
+
+    clearTimeout(resumeTimer);
+
+    resumeTimer = setTimeout(function () {
+        autoScrolling = true;
+    }, 2000);
+});
+
+autoScroll();
+</script>
+
+</body>
+</html>
